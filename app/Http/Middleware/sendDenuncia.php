@@ -9,7 +9,8 @@ class sendDenuncia
 
     public function handle($request, Closure $next)
     {
-        if ($request->header('Authorization') == "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXBpX2FnbG9tZXJhY2FvX3Nhb19sdWlzIiwiYXBwX25hbWUiOiJhcHBfYWdsb21lcmFjYW8iLCJzdGF0dXMiOiJhcHBfYWdsb21lcmFjYW9fb24ifQ==.1ovjpEp1H3TnYV8EpcjRwPwn34W9AIBKYJkc3oIHlSk=") {
+        // coloque o token
+        if ($request->header('Authorization') == "TOKEN") {
             return $next($request);
         } else{
             $resultado['status_token'] = false;    
